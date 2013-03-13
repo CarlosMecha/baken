@@ -1,14 +1,19 @@
 #!/usr/bin/env python
 import optparse
+from lib import *
 
-parser = optparse.OptionParser()
+# parser = optparse.OptionParser(version="Baken 0.1.0")
 
-parser.add_option('-a', '--add', help='Adds a file or a directory to the baken repository', dest='add', default=False, action='store')
-parser.add_option('-d', '--delete', help='Deletes a file or a directory from the baken repository', dest='delete', default=False, action='store')
-parser.add_option('-m', '--move', help='Moves a file inside the baken repository', dest='move', action='store', nargs=2)
+# parser.add_option('-a', 'add', help='Adds a file or a directory to the baken repository', dest='add', default=False, action='store')
+# parser.add_option('-d', 'delete', help='Deletes a file or a directory from the baken repository', dest='delete', default=False, action='store')
+# parser.add_option('-m', 'move', help='Moves a file inside the baken repository', dest='move', action='store', nargs=2)
 
-(opts, args) = parser.parse_args()
+# (opts, args) = parser.parse_args()
 
-print opts.add
-print opts.delete
-print opts.move
+# print opts.add
+# print opts.delete
+# print opts.move
+
+if __name__ == "__main__":
+  action = add.BakenAdd()
+  action.run()
