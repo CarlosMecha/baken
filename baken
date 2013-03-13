@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import optparse
-from lib import *
+from action import *
 
 # parser = optparse.OptionParser(version="Baken 0.1.0")
 
