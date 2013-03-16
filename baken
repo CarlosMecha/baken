@@ -1,6 +1,7 @@
 #!/usr/bin/env python
-import optparse
-from action import *
+import sys, logging
+from cli.parser.argumentparser import ArgumentParser
+from core.action.add import AddAction
 
 # parser = optparse.OptionParser(version="Baken 0.1.0")
 
@@ -14,6 +15,18 @@ from action import *
 # print opts.delete
 # print opts.move
 
+def main(argv):
+
+  logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
+
+  add_action = AddAction()
+
+  parser = ArgumentParser({"add": add_action})
+  parser.parse()
+  add_action.run()
+
+  sys.exit(0)
+
 if __name__ == "__main__":
-  action = add.BakenAdd()
-  action.run()
+
+  main(sys.argv)
